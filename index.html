@@ -167,6 +167,161 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="黄家俊">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学渊阁">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/11/10/Java%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="post-title-link" itemprop="url">Java学习笔记（一）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-10 11:16:49 / 修改时间：20:59:28" itemprop="dateCreated datePublished" datetime="2020-11-10T11:16:49+08:00">2020-11-10</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Java基本语法 — 数据类型</p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>Java是一种强类型语言，所有变量都必须先明确定义其数据类型才能使用。Java的数据类型有两类：基本数据类型和引用数据类型。</p>
+<p><strong>八大基本数据类型：</strong></p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>数据类型</th>
+<th>占用字节数</th>
+<th>取值范围(最好记住byte、short和char)</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>字节型</td>
+<td>1</td>
+<td>-128 ~ 127 (~2<sup>7</sup> ~ 2<sup>7</sup>-1)</td>
+<td>(byte)0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>短整型</td>
+<td>2</td>
+<td>-32768 ~ 32767 (-2<sup>15</sup> ~ 2<sup>15</sup>-1)</td>
+<td>(short)0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>整型</td>
+<td>4</td>
+<td>-2<sup>31</sup> ~ 2<sup>31</sup>-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>长整型</td>
+<td>8</td>
+<td>-2<sup>63</sup> ~ 2<sup>63</sup>-1</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>单精度浮点型</td>
+<td>4</td>
+<td>-3.4028E+38 ~ -1.4013E-45 和 1.4013E-45 ~ 3.4028E+38</td>
+<td>0.0F</td>
+</tr>
+<tr>
+<td>double</td>
+<td>双精度浮点型</td>
+<td>8</td>
+<td>-1.7977E+308 ~ -4.9E-324 和 4.9E-324 ~ 1.7977E+308</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>布尔型</td>
+<td>1</td>
+<td>true  false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>字符型</td>
+<td>2</td>
+<td>(0,65535)</td>
+<td>‘\u0000’</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>：</p>
+<ol>
+<li><p>Java中整数默认为整型，若要整数为长整型在整数后面加L或者l，浮点数默认为双精度浮点型，若要浮点数为单精度浮点型在浮点数后面加F或者f</p>
+</li>
+<li><p>在使用表达式的过程中，当其所处的上下文要求的类型与表达式类型不一致时，就会发生类型转换。基本数据类型的转换分为两种：自动类型转换和强制类型转换。</p>
+<p>自动类型转换：小类型到大类型（long l=10;）</p>
+<p>强制类型转换：大类型到小类型 （int i=(int)10L）</p>
+</li>
+<li><p>在JVM中，能转换的基本数据类型大小默认为（从小到大）：byte、short（char）、int、long、float、double</p>
+</li>
+<li><p>byte、short、int、long类型的整数如果整数值在各自对应的取值范围之内，不需要进行类型转换，可以直接赋值</p>
+</li>
+<li><p>若在byte、short、char类型之间进行计算，这三个类型都会自动转换成int类型再进行计算</p>
+</li>
+<li><p>boolean无法转换成其他类型</p>
+</li>
+<li><p>进行计算时，数据的类型会自动转换成表达式中最大的数据类型，然后再进行计算</p>
+</li>
+</ol>
+<hr>
+<p><strong>引用数据类型：</strong></p>
+<p>String（字符串类型）、所有类…</p>
+<p><strong>注意：</strong></p>
+<ol>
+<li>引用数据类型的变量创建必须使用new关键字，但由于String太常用了，可以直接赋值，如：String=“abc”;</li>
+<li>引用数据类型的默认值为null</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -367,7 +522,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
